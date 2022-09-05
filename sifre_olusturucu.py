@@ -15,7 +15,6 @@ dizi = []
 system("clear")
 
 print("\n ）︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶（")
-print(f" ）          {Back.RED}ISTINYE UNIVERSITESI{Back.RESET}          （")
 print(" ）----------------------------------------（")
 print(" ）            Sifre Olusturucu            （")
 print(" ）           ------------------           （")
